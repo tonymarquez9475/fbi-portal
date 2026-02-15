@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Federal Investigation Portal</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+
+    <div id="boot" class="screen active" aria-label="Boot screen">
+      <div class="bootBox">
+        <div class="bootTitle mono">FEDERAL INVESTIGATION TERMINAL</div>
+        <pre id="bootLog" class="mono"></pre>
+        <div class="cursor mono">█</div>
+      </div>
+    </div>
+
+    <div id="portal" class="screen" aria-label="Portal screen">
+      <div class="frame">
+
+        <div class="topbar">
+          <div class="topLeft">
+            <div class="title mono">FEDERAL INVESTIGATION PORTAL</div>
+            <div class="subtitle mono">CLASSIFICATION: INTERNAL • SESSION RECORDED: YES</div>
+          </div>
+          <div class="topRight mono">
+            <div>RANK: <span id="rank">PROBATIONARY AGENT</span></div>
+            <div>CONVICTION: <span id="conviction">--</span></div>
+            <div>LINK: <span class="ok">ONLINE</span></div>
+          </div>
+        </div>
+
+        <div class="main">
+          <div class="panel left">
+            <div class="panelHead mono">CASE FILES</div>
+            <div class="tabs mono">
+              <button class="tab active" data-tab="summary">SUMMARY</button>
+              <button class="tab" data-tab="report">REPORT</button>
+              <button class="tab" data-tab="evidence">EVIDENCE</button>
+              <button class="tab" data-tab="charges">CHARGES</button>
+            </div>
+            <div id="caseBody" class="panelBody mono"></div>
+          </div>
+
+          <div class="panel center">
+            <div class="panelHead mono">CALL CONSOLE</div>
+            <div class="callMeta mono">
+              <div>LINE: <span class="muted">SECURE AUDIO</span></div>
+              <div>SIGNAL: <span id="signal" class="muted">IDLE</span></div>
+              <div>ACTIVE: <span id="activeChar" class="muted">NONE</span></div>
+            </div>
+
+            <div id="notification" class="notification mono" role="status" aria-live="polite"></div>
+
+            <div id="transcript" class="transcript mono"></div>
+
+            <div class="composer">
+              <input id="msg" class="mono" placeholder="Type interrogation question..." />
+              <button id="send" class="mono">SEND</button>
+            </div>
+
+            <div class="actions">
+              <button id="fileCharges" class="mono outline">FILE CHARGES</button>
+              <button id="resetCase" class="mono outline">RESET CASE</button>
+            </div>
+          </div>
+
+          <div class="panel right">
+            <div class="panelHead mono">CONTACTS</div>
+            <div id="contacts" class="contacts mono"></div>
+          </div>
+        </div>
+
+        <div class="syslog mono">
+          <div class="syslogHead">SYSTEM LOG</div>
+          <div id="syslogBody" class="syslogBody"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modalBox">
+        <div class="modalTitle mono">PROSECUTOR REVIEW</div>
+        <pre id="modalText" class="mono"></pre>
+        <div class="modalActions">
+          <button id="closeModal" class="mono">CLOSE</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
