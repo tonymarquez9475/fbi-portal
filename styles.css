@@ -54,15 +54,8 @@ body{
 }
 @keyframes blink{ 50%{opacity:0;} }
 
-.frame{
-  width:390px;
-  height:844px; /* standard iPhone-ish dimensions */
-  border:1px solid var(--border);
-  border-radius:14px;
-  background:#070b10;
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
+.syslog{
+  height:96px;
 }
 
 .topbar{
